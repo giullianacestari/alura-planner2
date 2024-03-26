@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alura Planner</title>
+    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <main class="container">
+        <!-- Conteúdo lateral da página (lado esquerdo) -->
+        <aside class="menu-lateral">
+            <!-- Título -->
+            <h1>Alura Planner</h1>
+            <hr>
+            <!-- Formulário para adicionar nova tarefa -->
+            <form>
+                <h2>Adicionar nova tarefa</h2>
+
+                <!-- Campo "disciplina" -->
+                <div>
+                    <label for="disciplina">Disciplina:</label>
+                    <select id="disciplina" class="disciplina">
+                        <option disabled>Escolha uma disciplina</option>
+                        <option value="Matemática">Matemática</option>
+                        <option value="Português">Português</option>
+                        <option value="Ciências">Ciências</option>
+                    </select>
+
+                </div>
+                <!-- Campo "tarefa" -->
+                <div>
+                    <label for="descricao">Tarefa:</label>
+                    <input id="descricao" name="tarefa" type="text" placeholder="digite sua tarefa" required>
+                    <br>
+                </div>
+                <!-- Campo "prazo" -->
+                <div>
+                    <label for="data-de-conclusao">Prazo:</label>
+                    <input type="date" id="data-de-conclusao" required>
+                </div>
+
+                <!-- Botão "enviar" -->
+                <button type="button" class="adicionar" onclick="novaTarefa()">Enviar</button>
+            </form>
+
+            <!-- Botões adicionais -->
+            <div class="botoes">
+
+                <!-- Botão "filtrar por disciplina" -->
+                <div>
+                    <button class="filtrar" id="filtrar">Filtrar por disciplina</button>
+
+                    <select id="menuFiltrar" class="disciplina" onchange="filtraTarefas()">
+                        <option value="" selected>Todas</option>
+                    </select>
+                </div>
+                <!-- Botão "ordenar por prazo" -->
+                <button class="ordenar" id="ordenar">Ordenar <br> por prazo</button>
+
+            </div>
+        </aside>
+
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Disciplina</th>
+                        <th>Tarefa</th>
+                        <th>Prazo</th>
+                        <th>Feito</th>
+                        <th class="invisivel"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="/assets/main.js"></script>
+</body>
+
+</html>
