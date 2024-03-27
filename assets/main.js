@@ -34,12 +34,14 @@ function desenhaTabela(listaTarefas = tabela) {
     let descricaoCell = row.insertCell(1);
     let dataCell = row.insertCell(2);
     let feitoCell = row.insertCell(3);
-    let removerCell = row.insertCell(4);
+    let progressoCell = row.insertCell(4);
+    let removerCell = row.insertCell(5);
 
     disciplinaCell.textContent = item.disciplina;
     descricaoCell.textContent = item.descricao;
     dataCell.textContent = formataData(item.data);
     feitoCell.appendChild(verificaFeito(item.feito, item.id));
+    progressoCell.textContent = verificaProgresso(item.feito, item.data);
     removerCell.appendChild(desenhaBotao(item.id));
   });
 
@@ -70,7 +72,6 @@ function verificaFeito(status, id) {
         tarefa.feito = inputClicado.checked;
       }
     });
-    // ! VERIFICAÇÃO: console.log(tabela);
 
     //desenha a tabela novamente
     desenhaTabela();
@@ -79,6 +80,25 @@ function verificaFeito(status, id) {
   //retorna o input criado
   return marcaComoFeito;
 }
+
+function verificaProgresso(feito, prazo) {
+  let hoje = new Date();
+
+  //transforma o prazo de string para date
+  prazo = new Date(prazo);
+
+  if (feito == true) {
+    return "Finalizado";
+  } else {
+    if (prazo < hoje) {
+      // realizar o teste antes de add linha 85
+      return "Atrasado!";
+    } else {
+      return "A fazer";
+    }
+  }
+}
+
 
 function desenhaBotao(id) {
   // Adicionado botão "Remover" em cada linha da mesma maneira do checkbox
