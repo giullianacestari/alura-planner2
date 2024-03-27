@@ -14,7 +14,7 @@
         <!-- Conteúdo lateral da página (lado esquerdo) -->
         <aside class="menu-lateral">
             <!-- Título -->
-            <h1>Alura Planner2</h1>
+            <h1>Alura Planner</h1>
             <hr>
             <!-- Formulário para adicionar nova tarefa -->
             <form>
@@ -56,6 +56,9 @@
 
                     <select id="menuFiltrar" class="disciplina" onchange="filtraTarefas()">
                         <option value="" selected>Todas</option>
+                        <option value="Matemática">Matemática</option>
+                        <option value="Português">Português</option>
+                        <option value="Ciências">Ciências</option>
                     </select>
                 </div>
                 <!-- Botão "ordenar por prazo" -->
@@ -90,6 +93,7 @@
     </main>
 
     <script src="/assets/main.js"></script>
+    <script src="/assets/filtrar.js"></script>
     <script src="/assets/ordenar.js"></script>
 </body>
 
