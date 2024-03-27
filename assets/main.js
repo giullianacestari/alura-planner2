@@ -42,6 +42,8 @@ function desenhaTabela(listaTarefas = tabela) {
     feitoCell.appendChild(verificaFeito(item.feito, item.id));
     removerCell.appendChild(desenhaBotao(item.id));
   });
+
+  localStorage_salvaTarefas(tabela);
 }
 
 //desenhando assim que carrega a página
